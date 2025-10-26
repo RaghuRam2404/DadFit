@@ -1,0 +1,191 @@
+// DAD FIT Website JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar.offsetHeight;
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > navbarHeight) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    navbarToggler.click();
+                }
+            }
+        });
+    });
+
+    // Active navigation highlighting
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navbarHeight - 50;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Button click handlers
+    const surveyBtn = document.querySelector('.btn-survey');
+    const storyBtn = document.querySelector('.btn-story');
+    
+    // Remove preventDefault for external links
+    // surveyBtn and storyBtn now link to external URLs (WhatsApp, YouTube)
+    // No need to prevent default behavior
+    
+    if (storyBtn) {
+        // Story button now links to external YouTube URL
+        // No need to prevent default behavior
+    }
+
+    // Responsive image handling
+    function handleResponsiveImages() {
+        const heroImage = document.querySelector('.hero-main-image');
+        if (heroImage) {
+            // Ensure images are properly loaded and displayed
+            heroImage.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            // Add error handling for images
+            heroImage.addEventListener('error', function() {
+                this.style.display = 'none';
+                console.warn('Hero image failed to load');
+            });
+        }
+    }
+
+    // Initialize responsive image handling
+    handleResponsiveImages();
+
+    // Parallax effect for hero background (optional enhancement)
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroBackground = document.querySelector('.hero-background');
+        
+        if (heroBackground && window.innerWidth > 768) {
+            const speed = scrolled * 0.5;
+            heroBackground.style.transform = `translateY(${speed}px)`;
+        }
+    });
+
+    // Mobile menu auto-close on resize
+    window.addEventListener('resize', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (window.innerWidth > 991 && navbarCollapse.classList.contains('show')) {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            navbarToggler.click();
+        }
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.hero-content > *');
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+
+    // Performance optimization: Debounce scroll events
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Apply debouncing to scroll-heavy functions
+    const debouncedScroll = debounce(function() {
+        // Any heavy scroll operations can go here
+    }, 16); // ~60fps
+
+    window.addEventListener('scroll', debouncedScroll);
+
+    // Accessibility enhancements
+    function enhanceAccessibility() {
+        // Add skip link for keyboard navigation
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main-content';
+        skipLink.className = 'skip-link visually-hidden-focusable';
+        skipLink.textContent = 'Skip to main content';
+        document.body.insertBefore(skipLink, document.body.firstChild);
+
+        // Enhanced focus management for mobile menu
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', function() {
+                // Focus management for mobile menu
+                setTimeout(() => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        const firstNavLink = navbarCollapse.querySelector('.nav-link');
+                        if (firstNavLink) firstNavLink.focus();
+                    }
+                }, 300);
+            });
+        }
+    }
+
+    // Initialize accessibility enhancements
+    enhanceAccessibility();
+
+    console.log('DAD FIT website initialized successfully!');
+});

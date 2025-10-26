@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support DadFit - Buy me a coffee for free fitness content">
+    <title>Support DadFit | Buy Me a Coffee</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .coffee-section {
+            min-height: 100vh;
+            background: var(--primary-dark);
+            padding: 2rem 0 5rem 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coffee-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-green);
+            clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
+        
+        .coffee-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-overlay);
+            z-index: 2;
+        }
+        
+        .coffee-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .coffee-card {
+            background: var(--primary-green);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(52, 195, 99, 0.4);
+            text-align: center;
+        }
+        
+        .coffee-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        
+        .coffee-title {
+            font-family: Inter;
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--primary-white);
+            margin-bottom: 1rem;
+        }
+        
+        .coffee-description {
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+        }
+        
+        .qr-container {
+            background: var(--primary-white);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px solid var(--primary-white);
+            margin: 2rem 0;
+            display: inline-block;
+        }
+        
+        .qr-placeholder {
+            width: 300px;
+            height: 300px;
+            background: var(--light-gray);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--primary-gray);
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .upi-link {
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .upi-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .upi-id {
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary-dark);
+            background: var(--primary-white);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .upi-id:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-white);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-white);
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+        
+        .gratitude-text {
+            font-family: Inter;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--primary-white);
+            margin-top: 2rem;
+            font-style: italic;
+        }
+        
+        .scan-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 767.98px) {
+            .coffee-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .coffee-title {
+                font-size: 28px;
+            }
+            
+            .coffee-description {
+                font-size: 16px;
+            }
+            
+            .qr-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .upi-id {
+                font-size: 14px;
+                padding: 0.75rem 1rem;
+                word-break: break-all;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .coffee-section {
+                padding: 1rem 0 3rem 0;
+            }
+            
+            .coffee-card {
+                padding: 1.5rem 1rem;
+            }
+            
+            .coffee-icon {
+                font-size: 3rem;
+            }
+            
+            .coffee-title {
+                font-size: 24px;
+            }
+            
+            .coffee-description {
+                font-size: 15px;
+            }
+            
+            .qr-container {
+                padding: 1.5rem;
+            }
+            
+            .qr-placeholder {
+                width: 220px;
+                height: 220px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Coffee Support Section -->
+    <section class="coffee-section">
+        <div class="coffee-background"></div>
+        <div class="coffee-overlay"></div>
+        <div class="container">
+            <div class="coffee-container">
+                <div class="coffee-card">
+                    <div class="coffee-icon">☕</div>
+                    <h1 class="coffee-title">Buy Me a Coffee</h1>
+                    <p class="coffee-description">
+                        Enjoying the free fitness tutorials on YouTube? If you find value in the content and want to support 
+                        the creation of more quality videos, you can do so here.
+                    </p>
+                    
+                    <div class="qr-container">
+                        <div class="qr-placeholder">
+                            [Place your UPI QR code image here]<br><br>
+                            Replace this placeholder with your actual QR code image
+                        </div>
+                    </div>
+                    
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 14px; margin-top: 1rem;">
+                        Scan the QR code with any UPI app
+                    </p>
+                    
+                    <a href="upi://pay?pa=your-upi-id@bank&pn=DadFit&cu=INR" class="upi-link">
+                        <div class="upi-id">
+                            UPI ID: your-upi-id@bank
+                        </div>
+                    </a>
+                    
+                    <p class="gratitude-text">
+                        Thank you for supporting the DadFit community! 💪
+                    </p>
+                    
+                    <a href="index.html" class="back-link">
+                        ← Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
