@@ -187,5 +187,100 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize accessibility enhancements
     enhanceAccessibility();
 
+    // Auto-populate YouTube video thumbnails
+    function populateVideoThumbnails() {
+        const videoLinks = document.querySelectorAll('.video-link');
+        
+        videoLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            const img = link.querySelector('.video-preview');
+            
+            if (href && img) {
+                // Extract video ID from YouTube URL
+                let videoId = null;
+                
+                // Handle youtube.com/watch?v=VIDEO_ID format
+                if (href.includes('youtube.com/watch?v=')) {
+                    const urlParams = new URLSearchParams(href.split('?')[1]);
+                    videoId = urlParams.get('v');
+                }
+                // Handle youtu.be/VIDEO_ID format
+                else if (href.includes('youtu.be/')) {
+                    videoId = href.split('youtu.be/')[1].split('?')[0];
+                }
+                // Handle youtube.com/shorts/VIDEO_ID format
+                else if (href.includes('youtube.com/shorts/')) {
+                    videoId = href.split('/shorts/')[1].split('?')[0];
+                }
+                
+                // Set thumbnail if video ID found
+                if (videoId) {
+                    img.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                    img.onerror = function() {
+                        // Fallback to default quality if mqdefault fails
+                        this.src = `https://img.youtube.com/vi/${videoId}/default.jpg`;
+                    };
+                }
+            }
+        });
+    }
+
+    // Initialize video thumbnails
+    populateVideoThumbnails();
+
+    // Resources page navigation smooth scroll
+    const resourcesNavLinks = document.querySelectorAll('.resources-nav-link');
+    
+    resourcesNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            const resourcesNav = document.getElementById('resourcesNav');
+            
+            if (targetSection) {
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                const resourcesNavHeight = resourcesNav ? resourcesNav.offsetHeight : 60;
+                const offsetTop = targetSection.offsetTop - navbarHeight - resourcesNavHeight - 20;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Highlight active section on scroll
+    if (resourcesNavLinks.length > 0) {
+        const sections = document.querySelectorAll('.resources-section[id]');
+        const resourcesNav = document.getElementById('resourcesNav');
+        
+        window.addEventListener('scroll', function() {
+            const navbarHeight = navbar ? navbar.offsetHeight : 80;
+            const resourcesNavHeight = resourcesNav ? resourcesNav.offsetHeight : 60;
+            const scrollPosition = window.scrollY + navbarHeight + resourcesNavHeight + 100;
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            resourcesNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
+
     console.log('DAD FIT website initialized successfully!');
 });

@@ -22,6 +22,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 130px;
+}
+
 /* Text Selection Styling */
 ::selection {
     background: rgba(52, 195, 99, 0.7);
@@ -1637,99 +1641,290 @@ html {
 }
 
 .resources-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     background: var(--primary-dark);
 }
 
-.resource-card {
-    background: rgba(30, 30, 30, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(52, 195, 99, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+/* Exercise Subsections */
+.exercise-subsection {
+    margin-bottom: 3rem;
 }
 
-.resource-card:hover {
-    border-color: rgba(52, 195, 99, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(52, 195, 99, 0.15);
-}
-
-/* Video Cards */
-.video-card .video-thumbnail {
-    position: relative;
-    overflow: hidden;
-    background: var(--primary-dark);
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.video-card:hover .video-thumbnail img {
-    transform: scale(1.05);
-}
-
-.play-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--primary-green);
-    opacity: 0.9;
-    transition: all 0.3s ease;
-}
-
-.video-card:hover .play-overlay {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-/* Guide Cards */
-.guide-card {
-    padding: 2rem;
-}
-
-.guide-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.resource-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.guide-card .resource-content {
-    padding: 0;
-}
-
-.resource-title {
+.subsection-title {
     font-family: Inter;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 1.3;
-    margin-bottom: 0.75rem;
-    color: var(--primary-white);
+    font-size: 24px;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
 }
 
-.resource-description {
+.subsection-note {
     font-family: Inter;
     font-weight: 400;
     font-size: 15px;
     line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* Resources Quick Navigation */
+.resources-nav {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(30, 30, 30, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(52, 195, 99, 0.2);
+    padding: 0.75rem 0;
+    margin: 0;
+}
+
+.resources-nav-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.resources-nav-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.resources-nav-link {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.resources-nav-link:hover {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+    background: rgba(52, 195, 99, 0.1);
+}
+
+.resources-nav-link.active {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+    background: rgba(52, 195, 99, 0.15);
+}
+
+/* Override navbar for resources page - keep it fixed */
+body:has(.resources-nav) .navbar {
+    position: fixed;
+    top: 0;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    transition: none;
+}
+
+/* Workout Sequence Styling */
+.workout-sequence-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.sequence-step {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(52, 195, 99, 0.05);
+    border-left: 4px solid var(--primary-green);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sequence-step:hover {
+    background: rgba(52, 195, 99, 0.08);
+    transform: translateX(5px);
+}
+
+.sequence-title {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
+}
+
+.sequence-description {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.5rem;
+}
+
+.sequence-note {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .resources-nav {
+        top: 50px;
+    }
+    
+    body:has(.resources-nav) .navbar {
+        top: 0;
+    }
+}
+
+.simple-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.simple-list li {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.simple-list li::before {
+    content: '•';
+    color: var(--primary-green);
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.stretch-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.stretch-link:hover {
+    color: var(--primary-green);
+}
+
+.video-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video-item {
+    margin-bottom: 1rem;
+}
+
+.video-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-white);
+    transition: opacity 0.2s ease;
+}
+
+.video-link:hover {
+    opacity: 0.8;
+    color: var(--primary-green);
+}
+
+.video-preview {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.video-title {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Nutrition Cards */
+.nutrition-card {
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 195, 99, 0.2);
+    border-radius: 15px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.nutrition-card:hover {
+    border-color: rgba(52, 195, 99, 0.3);
+}
+
+.nutrition-subtitle {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.nutrition-intro {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.food-category {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.food-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.food-list li {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.25rem;
-    flex-grow: 1;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.food-list li::before {
+    content: '•';
+    color: var(--primary-green);
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
 }
 
 /* Resources CTA Section */
@@ -1803,19 +1998,40 @@ html {
         width: 100%;
         margin: 0 !important;
     }
+
+    .subsection-title {
+        font-size: 22px;
+    }
+
+    .nutrition-card {
+        padding: 1.5rem;
+    }
+
+    .nutrition-subtitle {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 767.98px) {
-    .resource-title {
+    .subsection-title {
+        font-size: 20px;
+    }
+
+    .video-preview {
+        width: 100px;
+        height: 56px;
+    }
+
+    .video-title {
+        font-size: 15px;
+    }
+
+    .nutrition-subtitle {
         font-size: 18px;
     }
 
-    .resource-description {
+    .food-list li {
         font-size: 14px;
-    }
-
-    .guide-icon {
-        font-size: 2.5rem;
     }
 }
 

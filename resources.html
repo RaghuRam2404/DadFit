@@ -70,200 +70,507 @@
         </div>
     </nav>
 
-    <!-- Resources Hero Section -->
-    <section class="resources-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-background"></div>
-        
+    <!-- Quick Navigation -->
+    <nav class="resources-nav" id="resourcesNav">
         <div class="container">
-            <div class="row min-vh-100 align-items-center">
-                <div class="col-12">
-                    <div class="text-center">
-                        <h1 class="hero-title mb-4">
-                            Free Fitness <span class="text-highlight">Resources</span>
-                        </h1>
-                        <p class="hero-description" style="max-width: 800px; margin: 0 auto;">
-                            Learn fitness fundamentals through my YouTube videos, guides, and resources. 
-                            Build your knowledge and start your journey—completely free.
-                        </p>
+            <div class="resources-nav-scroll">
+                <a href="#workout-sequence" class="resources-nav-link">Workout</a>
+                <a href="#dynamic-stretches" class="resources-nav-link">Dynamic Stretches</a>
+                <a href="#exercises" class="resources-nav-link">Exercises</a>
+                <a href="#static-stretches" class="resources-nav-link">Static Stretches</a>
+                <a href="#veg-protein" class="resources-nav-link">Veg Protein</a>
+                <a href="#nonveg-protein" class="resources-nav-link">Non-Veg Protein</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Optimal Workout Sequence Section -->
+    <section class="resources-section" id="workout-sequence" style="padding-top: calc(58px + 3.5rem + 2rem); margin-top: 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title text-center mb-5">Optimal Workout Sequence</h2>
+                    
+                    <div class="workout-sequence-container">
+                        <div class="sequence-step">
+                            <h3 class="sequence-title">Dynamic Warm-Up</h3>
+                            <p class="sequence-description">5-10 minutes: movement prep, light cardio, elevate heart rate, increase muscle temperature</p>
+                            <p class="sequence-note">Dynamic Stretches for neck and upper/lower body</p>
+                        </div>
+                        
+                        <div class="sequence-step">
+                            <h3 class="sequence-title">Core Activation & Stabilisation work</h3>
+                            <p class="sequence-description">McGill Big 3, planks—engage stabilisers</p>
+                            <p class="sequence-note">Rotator cuff exercises, before doing upper body workouts</p>
+                        </div>
+                        
+                        <div class="sequence-step">
+                            <h3 class="sequence-title">Main Workout</h3>
+                            <p class="sequence-description">Compound lifts first, then isolation—train in order of movement complexity</p>
+                        </div>
+                        
+                        <div class="sequence-step">
+                            <h3 class="sequence-title">Cardio Finisher</h3>
+                            <p class="sequence-description">10 minutes HIIT or steady-state—cardiovascular conditioning without compromising strength</p>
+                        </div>
+                        
+                        <div class="sequence-step">
+                            <h3 class="sequence-title">Static Stretching</h3>
+                            <p class="sequence-description">Cool-down phase—improve flexibility whilst muscles are warm, aid recovery</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- YouTube Videos Section -->
-    <section class="resources-section">
+    <!-- Dynamic Stretches Section -->
+    <section class="resources-section" id="dynamic-stretches">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h2 class="section-title text-center mb-5">YouTube Videos</h2>
+                    <h2 class="section-title text-center mb-5">Dynamic Stretches (Warm-ups)</h2>
                     
-                    <div class="row g-4">
-                        <!-- Video Card 1 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="resource-card video-card">
-                                <div class="video-thumbnail">
-                                    <img src="https://via.placeholder.com/400x225/1E1E1E/34C363?text=Video+Thumbnail" alt="Video thumbnail" class="img-fluid">
-                                    <div class="play-overlay">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Getting Started with Fitness</h3>
-                                    <p class="resource-description">
-                                        Learn the basics of starting your fitness journey the right way.
-                                    </p>
-                                    <a href="https://www.youtube.com/@yourchannelname" target="_blank" class="btn btn-sm btn-outline-primary">
-                                        Watch Video
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Card 2 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="resource-card video-card">
-                                <div class="video-thumbnail">
-                                    <img src="https://via.placeholder.com/400x225/1E1E1E/34C363?text=Video+Thumbnail" alt="Video thumbnail" class="img-fluid">
-                                    <div class="play-overlay">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Nutrition Fundamentals</h3>
-                                    <p class="resource-description">
-                                        Understanding nutrition basics without complicated meal plans.
-                                    </p>
-                                    <a href="https://www.youtube.com/@yourchannelname" target="_blank" class="btn btn-sm btn-outline-primary">
-                                        Watch Video
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video Card 3 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="resource-card video-card">
-                                <div class="video-thumbnail">
-                                    <img src="https://via.placeholder.com/400x225/1E1E1E/34C363?text=Video+Thumbnail" alt="Video thumbnail" class="img-fluid">
-                                    <div class="play-overlay">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Home Workout Essentials</h3>
-                                    <p class="resource-description">
-                                        Effective exercises you can do at home with minimal equipment.
-                                    </p>
-                                    <a href="https://www.youtube.com/@yourchannelname" target="_blank" class="btn btn-sm btn-outline-primary">
-                                        Watch Video
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Rotator Cuff and Hip Flexor Focus -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Rotator Cuff and Hip Flexor Focus</h3>
+                        
+                        <h4 class="subsection-subtitle">Rotator Cuff Isometric Hold (before upper body workouts)</h4>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/watch?v=v5bPOsQbq7g" target="_blank" class="stretch-link">Side-Lying External Rotation Hold</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=sM3pCYd1BFo" target="_blank" class="stretch-link">Banded W Isometric</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=oaZDSdFzlc8" target="_blank" class="stretch-link">Full Can Hold</a></li>
+                        </ul>
+                        
+                        <h4 class="subsection-subtitle">Hip Flexor Stretches (Do it daily)</h4>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/watch?v=sDn-UtqdX58" target="_blank" class="stretch-link">Kneeling hip flexor (Psoas & Iliacus) stretch</a></li>
+                            <li><a href="https://www.youtube.com/shorts/tTdVOSVqpxw" target="_blank" class="stretch-link">TFL stretch</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Neck Stretches -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Neck</h3>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/shorts/AefUaX7yLGw" target="_blank" class="stretch-link">Lateral neck flexion</a></li>
+                            <li><a href="https://www.youtube.com/shorts/ezMIFOy7IVA" target="_blank" class="stretch-link">Neck rotation</a></li>
+                        </ul>
                     </div>
 
-                    <!-- Channel Link -->
-                    <div class="text-center mt-5">
-                        <a href="https://www.youtube.com/@yourchannelname" target="_blank" class="btn btn-primary btn-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="me-2">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                            Visit My YouTube Channel
-                        </a>
+                    <!-- Lower Body Stretches -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Lower Body</h3>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/shorts/3zxDZE2z3rE" target="_blank" class="stretch-link">Glute bridges with band</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=my0tLDaWyDU" target="_blank" class="stretch-link">Bodyweight squats</a></li>
+                            <li><a href="https://www.youtube.com/shorts/peb887Bc0-Q" target="_blank" class="stretch-link">Walking lunges with twist</a></li>
+                            <li><a href="https://www.youtube.com/shorts/G2WyCoVwv8Y" target="_blank" class="stretch-link">Leg swings (forward/backward)</a></li>
+                            <li><a href="https://www.youtube.com/shorts/TAHk1yccDmM" target="_blank" class="stretch-link">Leg swings (lateral)</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=JsxQNiaX43g&" target="_blank" class="stretch-link">Butt kicks</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Upper Body Stretches -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Upper Body</h3>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/shorts/lzR7tzI1JUI" target="_blank" class="stretch-link">Arm circles</a></li>
+                            <li><a href="https://www.youtube.com/shorts/DvZg3CLethY" target="_blank" class="stretch-link">Internal/external shoulder rotations</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=sM3pCYd1BFo" target="_blank" class="stretch-link">Band pull-aparts</a></li>
+                            <li><a href="https://www.youtube.com/shorts/c-lBErfxszs" target="_blank" class="stretch-link">Push Ups</a></li>
+                            <li><a href="https://www.youtube.com/shorts/3TsOKiUDzw0" target="_blank" class="stretch-link">Scapular push-ups</a></li>
+                            <li><a href="https://www.youtube.com/shorts/9M8ylnbriB0" target="_blank" class="stretch-link">Scapular Pull-ups</a></li>
+                            <li><a href="https://www.youtube.com/shorts/EP9kkb6s-gM" target="_blank" class="stretch-link">Thoracic Spine rotations</a></li>
+                            <li><a href="https://www.youtube.com/shorts/gof42kkQ0-Q" target="_blank" class="stretch-link">Wrist circles</a></li>
+                            <li><a href="https://www.youtube.com/shorts/GldcURoToGc" target="_blank" class="stretch-link">Wrist circles and flexion/extension</a></li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Guides Section -->
-    <section class="resources-section">
+    <!-- Exercises Section -->
+    <section class="resources-section" id="exercises">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h2 class="section-title text-center mb-5">Guides & Articles</h2>
+                    <h2 class="section-title text-center mb-5">Exercises</h2>
                     
-                    <div class="row g-4">
-                        <!-- Guide Card 1 -->
-                        <div class="col-md-6">
-                            <div class="resource-card guide-card">
-                                <div class="guide-icon">
-                                    📖
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Beginner's Guide to Strength Training</h3>
-                                    <p class="resource-description">
-                                        A comprehensive guide to understanding progressive overload, proper form, and building a solid foundation.
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        Read Guide
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Guide Card 2 -->
-                        <div class="col-md-6">
-                            <div class="resource-card guide-card">
-                                <div class="guide-icon">
-                                    🍽️
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Sustainable Nutrition for Busy Dads</h3>
-                                    <p class="resource-description">
-                                        Learn how to eat healthy without restrictive diets, meal prep marathons, or giving up family meals.
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        Read Guide
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Guide Card 3 -->
-                        <div class="col-md-6">
-                            <div class="resource-card guide-card">
-                                <div class="guide-icon">
-                                    ⏰
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Time Management for Fitness</h3>
-                                    <p class="resource-description">
-                                        Strategies to fit workouts into your busy schedule—work, family, and everything in between.
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        Read Guide
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Guide Card 4 -->
-                        <div class="col-md-6">
-                            <div class="resource-card guide-card">
-                                <div class="guide-icon">
-                                    💪
-                                </div>
-                                <div class="resource-content">
-                                    <h3 class="resource-title">Building Habits That Stick</h3>
-                                    <p class="resource-description">
-                                        The psychology of habit formation and how to make fitness a permanent part of your lifestyle.
-                                    </p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        Read Guide
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Core Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Core - McGill Big 3</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://youtu.be/2_e4I-brfqs" target="_blank" class="video-link">
+                                    <img src="" alt="McGill Curl-Up" class="video-preview">
+                                    <span class="video-title">McGill Curl-Up - Targets rectus abdominis, obliques for spinal stability</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/v25dawSzRTM" target="_blank" class="video-link">
+                                    <img src="" alt="Plank" class="video-preview">
+                                    <span class="video-title">Plank</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/a2duDaO9BhM" target="_blank" class="video-link">
+                                    <img src="" alt="Shoulder Tap" class="video-preview">
+                                    <span class="video-title">Shoulder Tap</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+
+                    <!-- Chest Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Chest</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/watch?v=4Y2ZdHCOXok" target="_blank" class="video-link">
+                                    <img src="" alt="Flat Barbell Bench Press" class="video-preview">
+                                    <span class="video-title">Flat Barbell Bench Press - Overall chest development, compound strength builder</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/0f6-uCUKqgA" target="_blank" class="video-link">
+                                    <img src="" alt="Incline Dumbbell Press" class="video-preview">
+                                    <span class="video-title">Incline Dumbbell Press - Upper chest emphasis (clavicular head)</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/LfyQBUKR8SE" target="_blank" class="video-link">
+                                    <img src="" alt="Decline Bench Press" class="video-preview">
+                                    <span class="video-title">Decline Bench Press - Lower chest focus (costal head)</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/g3T7LsEeDWQ" target="_blank" class="video-link">
+                                    <img src="" alt="Chest Fly" class="video-preview">
+                                    <span class="video-title">Chest Fly - Pectoral isolation through horizontal adduction</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Back Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Back</h3>
+                        <p class="subsection-note">Training principle: vertical movements build back width, horizontal movements develop back thickness</p>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/watch?v=p40iUjf02j0" target="_blank" class="video-link">
+                                    <img src="" alt="Pull-Ups" class="video-preview">
+                                    <span class="video-title">Pull-Ups - Dominant: lats, biceps brachii, brachialis, teres major, rhomboids</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/KV4D8MQrdhw" target="_blank" class="video-link">
+                                    <img src="" alt="Lat Pulldown" class="video-preview">
+                                    <span class="video-title">V-Grip Lat Pulldown - Lat emphasis with controlled resistance</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/KV4D8MQrdhw?t=20&feature=share" target="_blank" class="video-link">
+                                    <img src="" alt="Wide Grip Row" class="video-preview">
+                                    <span class="video-title">Wide Grip Row - Middle/lower traps, rhomboids, rear delts for width and thickness</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/KV4D8MQrdhw?t=30&feature=share" target="_blank" class="video-link">
+                                    <img src="" alt="Narrow Grip Row" class="video-preview">
+                                    <span class="video-title">Narrow Grip Row - Lower lat emphasis, increased biceps involvement</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/8686PLZB_1Q" target="_blank" class="video-link">
+                                    <img src="" alt="Face Pull" class="video-preview">
+                                    <span class="video-title">Face Pull - Posterior deltoids, trapezius, rhomboids for shoulder health</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/hCDzSR6bW10" target="_blank" class="video-link">
+                                    <img src="" alt="Deadlift" class="video-preview">
+                                    <span class="video-title">Deadlift - Complete posterior chain: back, glutes, hamstrings, core, forearms</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Shoulder Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Shoulders</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/OLePvpxQEGk" target="_blank" class="video-link">
+                                    <img src="" alt="Overhead Press" class="video-preview">
+                                    <span class="video-title">Overhead DB Press - Complete shoulder development, triceps engagement, core stability</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/HeovYNoZDRg" target="_blank" class="video-link">
+                                    <img src="" alt="Lateral Raise" class="video-preview">
+                                    <span class="video-title">Lateral Raise</span>
+                                </a>
+                                
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/f_OGBg2KxgY" target="_blank" class="video-link">
+                                    <img src="" alt="Lateral Raise" class="video-preview">
+                                    <span class="video-title">Cable Lateral Raise - Lateral deltoid isolation, shoulder width development</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/3sjY-whu6Uw" target="_blank" class="video-link">
+                                    <img src="" alt="Front Raise" class="video-preview">
+                                    <span class="video-title">Front Raise - Anterior deltoid targeting, shoulder flexion emphasis</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/P5CXx_jgTDE" target="_blank" class="video-link">
+                                    <img src="" alt="Rear Delt" class="video-preview">
+                                    <span class="video-title">Rear Delt Fly</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/YOGQaNTc470" target="_blank" class="video-link">
+                                    <img src="" alt="Shrugs" class="video-preview">
+                                    <span class="video-title">Shrugs - trapezius development, scapular elevation strength</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Biceps Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Biceps</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/5hqKVbVn2iw" target="_blank" class="video-link">
+                                    <img src="" alt="Incline Dumbbell Curl" class="video-preview">
+                                    <span class="video-title">Incline Dumbbell Curl - Maximises biceps stretch, emphasises long head</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/nFQI0c1AZgM" target="_blank" class="video-link">
+                                    <img src="" alt="Hammer Curl" class="video-preview">
+                                    <span class="video-title">Hammer Curl - Emphasises brachioradialis and forearm muscles</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/E0fhqFK3agg" target="_blank" class="video-link">
+                                    <img src="" alt="Cross-Body Hammer Curl" class="video-preview">
+                                    <span class="video-title">Cross-Body Hammer Curl - Emphasises brachialis, builds biceps thickness</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/SfUrB2pkPGQ" target="_blank" class="video-link">
+                                    <img src="" alt="Concentration Curl" class="video-preview">
+                                    <span class="video-title">Concentration Curl - Pure biceps isolation, eliminates momentum</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Triceps Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Triceps</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://youtu.be/8Nkfuhxsl-0?t=242" target="_blank" class="video-link">
+                                    <img src="" alt="DB Skull Crushers" class="video-preview">
+                                    <span class="video-title">DB Skull Crushers - Full muscle stretch of long and lateral head</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/8Nkfuhxsl-0?t=336" target="_blank" class="video-link">
+                                    <img src="" alt="Cable Triceps Kickback" class="video-preview">
+                                    <span class="video-title">Cable Triceps Kickback - Contraction of long & lateral head</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/8IK6BkC0lWE?t=7&feature=share" target="_blank" class="video-link">
+                                    <img src="" alt="Reverse Grip Cable Pushdown" class="video-preview">
+                                    <span class="video-title">Reverse Grip Cable Pushdown - Targets medial head (do at last)</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Forearms Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Forearms</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/watch?v=3VLTzIrnb5g&pp=ygULd3Jpc3QgY3VybHM%3D" target="_blank" class="video-link">
+                                    <img src="" alt="Wrist Curls" class="video-preview">
+                                    <span class="video-title">Wrist Curls - Forearm flexors, palm-up position, wrist flexion movement</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/B699nq91i_w" target="_blank" class="video-link">
+                                    <img src="" alt="Reverse Wrist Curls" class="video-preview">
+                                    <span class="video-title">Reverse Wrist Curls - Forearm extensors, palm-down position</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/b_wVMXF7Hto" target="_blank" class="video-link">
+                                    <img src="" alt="Grip Strength Training" class="video-preview">
+                                    <span class="video-title">Grip Strength Training - Farmer's carries, dead hangs, gripper work</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Legs Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Legs</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/watch?v=my0tLDaWyDU" target="_blank" class="video-link">
+                                    <img src="" alt="Squats" class="video-preview">
+                                    <span class="video-title">Squats - Quads, glutes, hamstrings, core (the king of lower body exercises)</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://youtu.be/SEdqd1n0cvg" target="_blank" class="video-link">
+                                    <img src="" alt="Hip Thrust" class="video-preview">
+                                    <span class="video-title">Hip Thrust - Glute and hamstring emphasis, superior glute activation</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/5rIqP63yWFg" target="_blank" class="video-link">
+                                    <img src="" alt="Romanian Deadlift" class="video-preview">
+                                    <span class="video-title">Romanian Deadlift - Hamstrings, glutes, lower back, hip hinge pattern mastery</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/8JrHIIbdtTc" target="_blank" class="video-link">
+                                    <img src="" alt="Lunges" class="video-preview">
+                                    <span class="video-title">Lunges - Quads, glutes, hamstrings, unilateral strength and stability</span>
+                                </a>
+                            </li>
+                            <li class="video-item">
+                                <a href="https://www.youtube.com/shorts/baEXLy09Ncc" target="_blank" class="video-link">
+                                    <img src="" alt="Calf Raises" class="video-preview">
+                                    <span class="video-title">Calf Raises - Seated: soleus emphasis | Standing: gastrocnemius focus</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Abs Exercises -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Abs</h3>
+                        <ul class="video-list">
+                            <li class="video-item">
+                                <a href="https://youtu.be/Tn-XvYG9x7w?t=82" target="_blank" class="video-link">
+                                    <img src="" alt="Seated Crunches" class="video-preview">
+                                    <span class="video-title">Crunches variation & leg raise variation</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Static Stretches Section -->
+    <section class="resources-section" id="static-stretches">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title text-center mb-5">Static Stretches (After Exercise)</h2>
+                    
+                    <!-- Neck Stretches -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Neck</h3>
+                        <ul class="simple-list">
+                            <li><a href="https://youtu.be/wQylqaCl8Zo" target="_blank" class="stretch-link">Scalene & SCM stretch</a></li>
+                            <li><a href="https://youtu.be/imLiEN0Kf14" target="_blank" class="stretch-link">Levator scapulae stretch</a></li>
+                            <li><a href="https://youtu.be/7rnlAVhAK-8" target="_blank" class="stretch-link">Chin tucks for deep flexors</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Upper Body Stretches -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Upper Body</h3>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/shorts/_IOHtPSYGbk" target="_blank" class="stretch-link">Triceps stretch</a></li>
+                            <li><a href="https://www.youtube.com/shorts/40BBXdyJdak" target="_blank" class="stretch-link">Pectoral stretch</a></li>
+                            <li><a href="https://www.youtube.com/shorts/aIq0fLi8iak" target="_blank" class="stretch-link">Shoulder cross-body stretch</a></li>
+                            <li><a href="https://youtu.be/6V5tSn9oEJg" target="_blank" class="stretch-link">Overhead Lat Stretch</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=R7dI2ZcbiMI&pp=ygUUd3Jpc3QgZmxleG9yIHN0cmV0Y2jSBwkJBgoBhyohjO8%3D" target="_blank" class="stretch-link">Wrist flexor stretch</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=_uINTR_7X-g&pp=ygUXd3Jpc3QgZXh0ZW5zaW9uIHN0cmV0Y2g%3D" target="_blank" class="stretch-link">Wrist extensor stretch</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Lower Body Stretches -->
+                    <div class="exercise-subsection">
+                        <h3 class="subsection-title">Lower Body</h3>
+                        <ul class="simple-list">
+                            <li><a href="https://www.youtube.com/watch?v=sDn-UtqdX58" target="_blank" class="stretch-link">Kneeling hip flexor stretch</a></li>
+                            <li><a href="https://www.youtube.com/shorts/tTdVOSVqpxw" target="_blank" class="stretch-link">Standing TFL stretch</a></li>
+                            <li><a href="https://www.youtube.com/shorts/_XL1LierokM" target="_blank" class="stretch-link">Adductor Magnus stretch</a></li>
+                            <li><a href="https://www.youtube.com/shorts/oa7ooclvplY" target="_blank" class="stretch-link">Standing adductor stretch</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=h_yZV27H684" target="_blank" class="stretch-link">90/90 hamstring stretch</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=xO8CZWtfKDU" target="_blank" class="stretch-link">Supine biceps femoris stretch</a></li>
+                            <li><a href="https://youtu.be/2_2GMXTc1BE" target="_blank" class="stretch-link">Gastrocnemius and soleus stretch</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veg Protein Sources Section -->
+    <section class="resources-section" id="veg-protein">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title text-center mb-5">Veg Protein Sources</h2>
+                    <p class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7); font-style: italic;">Protein available in per raw 100gm</p>
+                    
+                    <ul class="simple-list" style="max-width: 600px; margin: 0 auto;">
+                        <li>Whey Protein Isolate: <span style="color: var(--primary-green); font-weight: 600;">83.87g</span></li>
+                        <li>Whey Protein Concentrate: <span style="color: var(--primary-green); font-weight: 600;">80.0g</span></li>
+                        <li>Soy Chunks: <span style="color: var(--primary-green); font-weight: 600;">52.0g</span></li>
+                        <li>Soybeans: <span style="color: var(--primary-green); font-weight: 600;">35.58g</span></li>
+                        <li>Peanuts: <span style="color: var(--primary-green); font-weight: 600;">23.65g</span></li>
+                        <li>Urad Dal: <span style="color: var(--primary-green); font-weight: 600;">24.0g</span></li>
+                        <li>Lentils (Moong Dal): <span style="color: var(--primary-green); font-weight: 600;">24.35g</span></li>
+                        <li>Kidney Beans (Rajma): <span style="color: var(--primary-green); font-weight: 600;">19.0g</span></li>
+                        <li>Chickpeas (Chana): <span style="color: var(--primary-green); font-weight: 600;">18.77g</span></li>
+                        <li>Paneer: <span style="color: var(--primary-green); font-weight: 600;">18.86g</span></li>
+                        <li>Almonds: <span style="color: var(--primary-green); font-weight: 600;">21.0g</span></li>
+                        <li>Oats: <span style="color: var(--primary-green); font-weight: 600;">16.9g</span></li>
+                        <li>Quinoa: <span style="color: var(--primary-green); font-weight: 600;">12.0g</span></li>
+                        <li>Greek Yogurt: <span style="color: var(--primary-green); font-weight: 600;">10.0g</span></li>
+                        <li>Milk: <span style="color: var(--primary-green); font-weight: 600;">3.26g</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Non-Veg Protein Sources Section -->
+    <section class="resources-section" id="nonveg-protein">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="section-title text-center mb-5">Non-Veg Protein Sources</h2>
+                    <p class="text-center mb-4" style="color: rgba(255, 255, 255, 0.7); font-style: italic;">Protein available in per raw 100gm</p>
+                    
+                    <ul class="simple-list" style="max-width: 600px; margin: 0 auto;">
+                        <li>Chicken Breast: <span style="color: var(--primary-green); font-weight: 600;">21.81g</span> </li>
+                        <li>Mutton (Goat Meat): <span style="color: var(--primary-green); font-weight: 600;">20.6g</span> </li>
+                        <li>Sardines: <span style="color: var(--primary-green); font-weight: 600;">19.8g</span> </li>
+                        <li>Fish (Pomfret): <span style="color: var(--primary-green); font-weight: 600;">19.02g</span> </li>
+                        <li>Eggs: <span style="color: var(--primary-green); font-weight: 600;">13.43g</span> </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -275,17 +582,13 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="cta-card">
-                        <h2 class="cta-title">Ready for Personalized Guidance?</h2>
+                        <h2 class="cta-title">Start Your Journey with DadFit</h2>
                         <p class="cta-description">
-                            Free resources are great for learning, but personalized training adapts to YOUR life, 
-                            YOUR challenges, and YOUR goals. Get accountability, real-time adjustments, and support 
-                            when you need it most.
+                            Real progress means building confidence for your future—not chasing shortcuts or six-pack promises, 
+                            but steady, lasting change you can trust.
                         </p>
                         <div class="cta-actions">
-                            <a href="index.html#package" class="btn btn-primary btn-lg me-3">
-                                View Training Package
-                            </a>
-                            <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline-light btn-lg">
+                            <a href="https://wa.me/919876543210" target="_blank" class="btn btn-primary btn-lg">
                                 Contact Me
                             </a>
                         </div>
