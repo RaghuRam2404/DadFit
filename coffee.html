@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Support DadFit - Buy me a coffee for free fitness content">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
     <title>Support DadFit | Buy Me a Coffee</title>
     
     <!-- Bootstrap CSS -->
@@ -102,12 +106,15 @@
             background: var(--light-gray);
             border-radius: 15px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 1rem;
             font-size: 14px;
             color: var(--primary-gray);
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
+            line-height: 1.6;
         }
         
         .upi-link {
@@ -238,32 +245,27 @@
         <div class="container">
             <div class="coffee-container">
                 <div class="coffee-card">
-                    <div class="coffee-icon">☕</div>
-                    <h1 class="coffee-title">Buy Me a Coffee</h1>
+                    <div class="coffee-icon">🚧</div>
+                    <h1 class="coffee-title">Payment Integration</h1>
                     <p class="coffee-description">
-                        Enjoying the free fitness tutorials on YouTube? If you find value in the content and want to support 
-                        the creation of more quality videos, you can do so here.
+                        We're currently setting up the payment integration to make it easy for you to support DadFit. 
+                        This page is under construction and will be ready soon!
                     </p>
                     
                     <div class="qr-container">
                         <div class="qr-placeholder">
-                            [Place your UPI QR code image here]<br><br>
-                            Replace this placeholder with your actual QR code image
+                            <strong style="font-size: 18px;">WORK IN PROGRESS</strong>
+                            <div>Payment integration is being configured.</div>
+                            <div>Check back soon for UPI and other payment options.</div>
                         </div>
                     </div>
                     
-                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 14px; margin-top: 1rem;">
-                        Scan the QR code with any UPI app
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 16px; margin-top: 1.5rem; font-weight: 500;">
+                        🔨 Coming Soon: UPI QR Code & Payment Links
                     </p>
                     
-                    <a href="upi://pay?pa=your-upi-id@bank&pn=DadFit&cu=INR" class="upi-link">
-                        <div class="upi-id">
-                            UPI ID: your-upi-id@bank
-                        </div>
-                    </a>
-                    
                     <p class="gratitude-text">
-                        Thank you for supporting the DadFit community! 💪
+                        Thank you for your interest in supporting DadFit! 💪
                     </p>
                     
                     <a href="index.html" class="back-link">
