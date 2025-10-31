@@ -87,7 +87,7 @@ body {
     font-family: Inter;
     font-weight: 300;
     font-style: normal;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
     margin: 0 0.5rem;
@@ -102,7 +102,7 @@ body {
     font-family: Inter;
     font-weight: 700;
     font-style: normal;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
 }
@@ -170,14 +170,14 @@ body {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 3rem 2rem 2rem 3rem;
 }
 
 .hero-title {
     font-family: Inter;
     font-weight: 700;
     font-style: normal;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 100%;
     letter-spacing: 0%;
     margin-bottom: 2rem;
@@ -192,8 +192,8 @@ body {
     font-family: Inter;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 26px;
     letter-spacing: 0%;
     margin-bottom: 3rem;
     color: #9A9A9A;
@@ -369,7 +369,7 @@ section {
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -415,12 +415,12 @@ section {
     }
     
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.3rem;
         margin-bottom: 1.5rem;
     }
     
     .hero-description {
-        font-size: 1.05rem;
+        font-size: 1rem;
         line-height: 1.6;
     }
     
@@ -460,7 +460,7 @@ section {
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
         margin-bottom: 1.5rem;
     }
@@ -479,6 +479,7 @@ section {
     .hero-description {
         text-align: center;
         margin: 0 auto 2rem;
+        font-size: 0.95rem;
     }
     
     .hero-content {
@@ -536,12 +537,12 @@ section {
     }
     
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         line-height: 1.3;
     }
     
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .hero-section {
@@ -622,7 +623,7 @@ section {
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-bottom: 1.5rem;
         text-align: center;
     }
@@ -635,7 +636,7 @@ section {
     }
     
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
         max-width: 600px;
         margin: 0 auto 2rem;
         text-align: center;
@@ -715,7 +716,7 @@ section {
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
         text-align: center;
         margin-bottom: 1.5rem;
     }
@@ -728,7 +729,7 @@ section {
     }
     
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-align: center;
         margin: 0 auto 2rem;
         max-width: 600px;
@@ -788,12 +789,12 @@ html {
 /* Enhanced mobile styles */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1rem;
         line-height: 1.4;
     }
     
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
         line-height: 1.5;
     }
     
@@ -825,11 +826,11 @@ html {
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .hero-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
         max-width: 450px;
     }
 }
@@ -837,11 +838,11 @@ html {
 /* Large desktop styles */
 @media (min-width: 1400px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     
     .hero-description {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         max-width: 550px;
     }
     
@@ -907,7 +908,7 @@ html {
 .section-title {
     font-family: Inter;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1.2;
     color: var(--primary-white);
     margin-bottom: 2rem;
@@ -924,13 +925,27 @@ html {
     border-radius: 2px;
 }
 
+.transformation-photo {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.transformation-caption {
+    font-family: Inter;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 0.75rem;
+}
+
 .story-card {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.08) 0%, rgba(52, 195, 99, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.05) 0%, rgba(52, 195, 99, 0.015) 100%);
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(52, 195, 99, 0.2);
+    border: 1px solid rgba(52, 195, 99, 0.15);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
@@ -949,8 +964,8 @@ html {
 }
 
 .story-card:hover {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.12) 0%, rgba(52, 195, 99, 0.04) 100%);
-    border-color: rgba(52, 195, 99, 0.4);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.08) 0%, rgba(52, 195, 99, 0.025) 100%);
+    border-color: rgba(52, 195, 99, 0.25);
     transform: translateY(-2px);
 }
 
@@ -961,7 +976,7 @@ html {
 .story-subtitle {
     font-family: Inter;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1.3;
     color: var(--primary-white);
     margin-bottom: 1.5rem;
@@ -970,7 +985,7 @@ html {
 .story-text {
     font-family: Inter;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1rem;
@@ -1021,25 +1036,25 @@ html {
 .stat-item {
     text-align: center;
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.1) 0%, rgba(52, 195, 99, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.07) 0%, rgba(52, 195, 99, 0.03) 100%);
     border-radius: 15px;
     transition: all 0.3s ease;
 }
 
 .stat-item:hover {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.15) 0%, rgba(52, 195, 99, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.1) 0%, rgba(52, 195, 99, 0.05) 100%);
     transform: scale(1.05);
 }
 
 .stat-icon {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
     font-family: Inter;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--primary-gray);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
@@ -1049,7 +1064,7 @@ html {
 .stat-value {
     font-family: Inter;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--primary-dark);
 }
 
@@ -1059,9 +1074,9 @@ html {
 }
 
 .philosophy-card {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.15) 0%, rgba(52, 195, 99, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.1) 0%, rgba(52, 195, 99, 0.03) 100%);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(52, 195, 99, 0.4);
+    border: 2px solid rgba(52, 195, 99, 0.25);
     padding: 2rem;
     border-radius: 15px;
     height: 100%;
@@ -1085,9 +1100,9 @@ html {
 }
 
 .philosophy-card:hover {
-    border-color: rgba(52, 195, 99, 0.6);
-    box-shadow: 0 15px 40px rgba(52, 195, 99, 0.25);
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.2) 0%, rgba(52, 195, 99, 0.08) 100%);
+    border-color: rgba(52, 195, 99, 0.35);
+    box-shadow: 0 12px 32px rgba(52, 195, 99, 0.2);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.14) 0%, rgba(52, 195, 99, 0.05) 100%);
 }
 
 .philosophy-card:hover::before {
@@ -1097,7 +1112,7 @@ html {
 .philosophy-title {
     font-family: Inter;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.3;
     margin-bottom: 1rem;
     color: var(--primary-white);
@@ -1106,24 +1121,24 @@ html {
 .philosophy-text {
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
 }
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.15) 0%, rgba(52, 195, 99, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.1) 0%, rgba(52, 195, 99, 0.04) 100%);
     padding: 3rem 2rem;
     border-radius: 20px;
     margin-top: 3rem;
-    border: 1px solid rgba(52, 195, 99, 0.2);
+    border: 1px solid rgba(52, 195, 99, 0.15);
 }
 
 .cta-text {
     font-family: Inter;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.5;
     color: var(--primary-white);
     margin-bottom: 2rem;
@@ -1135,7 +1150,7 @@ html {
     color: var(--primary-white);
     padding: 1.2rem 3rem;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 50px;
     border: none;
     transition: all 0.3s ease;
@@ -1153,15 +1168,15 @@ html {
 /* Responsive styles for About Section */
 @media (max-width: 991.98px) {
     .section-title {
-        font-size: 36px;
+        font-size: 32px;
     }
     
     .story-subtitle {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .story-text {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .story-card {
@@ -1184,15 +1199,19 @@ html {
     }
     
     .section-title {
-        font-size: 32px;
+        font-size: 26px;
+    }
+
+    .transformation-caption {
+        font-size: 12px;
     }
     
     .story-subtitle {
-        font-size: 22px;
+        font-size: 18px;
     }
     
     .story-text {
-        font-size: 15px;
+        font-size: 13px;
         line-height: 1.7;
     }
     
@@ -1211,15 +1230,15 @@ html {
     }
     
     .stat-icon {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     .stat-label {
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .stat-value {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .philosophy-card {
@@ -1227,11 +1246,11 @@ html {
     }
     
     .philosophy-title {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .philosophy-text {
-        font-size: 15px;
+        font-size: 13px;
     }
     
     .cta-section {
@@ -1239,27 +1258,27 @@ html {
     }
     
     .cta-text {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .btn-cta {
         padding: 1rem 2rem;
-        font-size: 16px;
+        font-size: 15px;
         width: 100%;
     }
 }
 
 @media (max-width: 575.98px) {
     .section-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .story-subtitle {
-        font-size: 20px;
+        font-size: 16px;
     }
     
     .story-text {
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .stats-grid {
@@ -1267,7 +1286,7 @@ html {
     }
     
     .cta-text {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.4;
     }
 }
@@ -1288,7 +1307,7 @@ html {
 .pricing-subtitle {
     font-family: Inter;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     color: var(--primary-white);
     margin-bottom: 1.5rem;
 }
@@ -1296,7 +1315,7 @@ html {
 .pricing-description {
     font-family: Inter;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     max-width: 700px;
@@ -1305,14 +1324,14 @@ html {
 
 /* Pricing Card */
 .pricing-card {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.08) 0%, rgba(52, 195, 99, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.05) 0%, rgba(52, 195, 99, 0.015) 100%);
     padding: 3rem;
     border-radius: 25px;
     box-shadow: none;
     position: relative;
     overflow: hidden;
     color: var(--primary-white);
-    border: 1px solid rgba(52, 195, 99, 0.25);
+    border: 1px solid rgba(52, 195, 99, 0.2);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
@@ -1330,8 +1349,8 @@ html {
 }
 
 .pricing-card:hover {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.12) 0%, rgba(52, 195, 99, 0.04) 100%);
-    border-color: rgba(52, 195, 99, 0.4);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.08) 0%, rgba(52, 195, 99, 0.025) 100%);
+    border-color: rgba(52, 195, 99, 0.3);
     transform: translateY(-3px);
 }
 
@@ -1346,7 +1365,7 @@ html {
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 2rem;
@@ -1360,39 +1379,39 @@ html {
 }
 
 .currency {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 600;
     margin-right: 0.5rem;
 }
 
 .amount {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 1;
     color: var(--primary-green);
 }
 
 .period {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--primary-gray);
     margin-left: 0.5rem;
 }
 
 .pricing-note {
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--primary-gray);
     margin-bottom: 0.5rem;
 }
 
 .pricing-payment {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--primary-white);
     margin-bottom: 2.5rem;
     padding: 1rem;
-    background: rgba(52, 195, 99, 0.1);
+    background: rgba(52, 195, 99, 0.08);
     border-radius: 10px;
 }
 
@@ -1405,7 +1424,7 @@ html {
 .features-title {
     font-family: Inter;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -1419,7 +1438,7 @@ html {
 .features-list li {
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
     padding: 0.75rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -1434,7 +1453,7 @@ html {
 .check-icon {
     color: var(--primary-green);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 1rem;
     flex-shrink: 0;
 }
@@ -1447,7 +1466,7 @@ html {
 }
 
 .cta-tagline {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--primary-white);
@@ -1458,7 +1477,7 @@ html {
     color: var(--primary-white);
     padding: 1.2rem 3rem;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 50px;
     border: none;
     transition: all 0.3s ease;
@@ -1477,11 +1496,11 @@ html {
 /* Responsive styles for Package Section */
 @media (max-width: 991.98px) {
     .pricing-subtitle {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .pricing-description {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .pricing-card {
@@ -1489,7 +1508,7 @@ html {
     }
     
     .amount {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -1499,11 +1518,11 @@ html {
     }
     
     .pricing-subtitle {
-        font-size: 22px;
+        font-size: 18px;
     }
     
     .pricing-description {
-        font-size: 15px;
+        font-size: 13px;
     }
     
     .pricing-card {
@@ -1511,35 +1530,35 @@ html {
     }
     
     .amount {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     
     .period {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .pricing-payment {
-        font-size: 14px;
+        font-size: 13px;
     }
     
     .features-list li {
-        font-size: 15px;
+        font-size: 13px;
     }
     
     .btn-pricing {
         width: 100%;
         padding: 1rem 2rem;
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
 @media (max-width: 575.98px) {
     .pricing-subtitle {
-        font-size: 20px;
+        font-size: 16px;
     }
     
     .pricing-description {
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .pricing-card {
@@ -1547,15 +1566,15 @@ html {
     }
     
     .amount {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
     
     .currency {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     
     .features-list li {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -1572,8 +1591,8 @@ html {
 }
 
 .accordion-item {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.05) 0%, rgba(52, 195, 99, 0.02) 100%);
-    border: 1px solid rgba(52, 195, 99, 0.2);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.04) 0%, rgba(52, 195, 99, 0.015) 100%);
+    border: 1px solid rgba(52, 195, 99, 0.15);
     border-radius: 15px;
     margin-bottom: 1rem;
     overflow: hidden;
@@ -1581,8 +1600,8 @@ html {
 }
 
 .accordion-item:hover {
-    border-color: rgba(52, 195, 99, 0.4);
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.08) 0%, rgba(52, 195, 99, 0.03) 100%);
+    border-color: rgba(52, 195, 99, 0.25);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.06) 0%, rgba(52, 195, 99, 0.02) 100%);
 }
 
 .accordion-button {
@@ -1590,7 +1609,7 @@ html {
     color: var(--primary-white);
     font-family: Inter;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     padding: 1.5rem;
     border: none;
     box-shadow: none;
@@ -1621,7 +1640,7 @@ html {
     color: rgba(255, 255, 255, 0.85);
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
 }
 
@@ -1653,7 +1672,7 @@ html {
 .subsection-title {
     font-family: Inter;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     color: var(--primary-green);
     margin-bottom: 1.5rem;
 }
@@ -1661,7 +1680,7 @@ html {
 .subsection-note {
     font-family: Inter;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
@@ -1698,7 +1717,7 @@ html {
 .resources-nav-link {
     font-family: Inter;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     padding: 0.5rem 1.5rem;
@@ -1738,21 +1757,21 @@ body:has(.resources-nav) .navbar {
 .sequence-step {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    background: rgba(52, 195, 99, 0.05);
+    background: rgba(52, 195, 99, 0.04);
     border-left: 4px solid var(--primary-green);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .sequence-step:hover {
-    background: rgba(52, 195, 99, 0.08);
+    background: rgba(52, 195, 99, 0.06);
     transform: translateX(5px);
 }
 
 .sequence-title {
     font-family: Inter;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     color: var(--primary-green);
     margin-bottom: 0.75rem;
 }
@@ -1760,7 +1779,7 @@ body:has(.resources-nav) .navbar {
 .sequence-description {
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 0.5rem;
@@ -1769,7 +1788,7 @@ body:has(.resources-nav) .navbar {
 .sequence-note {
     font-family: Inter;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.6);
     font-style: italic;
@@ -1795,7 +1814,7 @@ body:has(.resources-nav) .navbar {
 .simple-list li {
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.85);
     padding-left: 1.5rem;
@@ -1857,7 +1876,7 @@ body:has(.resources-nav) .navbar {
 .video-title {
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
 }
 
@@ -1865,20 +1884,20 @@ body:has(.resources-nav) .navbar {
 .nutrition-card {
     background: rgba(30, 30, 30, 0.6);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(52, 195, 99, 0.2);
+    border: 1px solid rgba(52, 195, 99, 0.15);
     border-radius: 15px;
     padding: 2.5rem;
     transition: all 0.3s ease;
 }
 
 .nutrition-card:hover {
-    border-color: rgba(52, 195, 99, 0.3);
+    border-color: rgba(52, 195, 99, 0.22);
 }
 
 .nutrition-subtitle {
     font-family: Inter;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     color: var(--primary-green);
     margin-bottom: 1rem;
 }
@@ -1886,7 +1905,7 @@ body:has(.resources-nav) .navbar {
 .nutrition-intro {
     font-family: Inter;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1.5rem;
@@ -1895,7 +1914,7 @@ body:has(.resources-nav) .navbar {
 .food-category {
     font-family: Inter;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--primary-white);
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -1910,7 +1929,7 @@ body:has(.resources-nav) .navbar {
 .food-list li {
     font-family: Inter;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.8);
     padding-left: 1.5rem;
@@ -1934,9 +1953,9 @@ body:has(.resources-nav) .navbar {
 }
 
 .cta-card {
-    background: linear-gradient(135deg, rgba(52, 195, 99, 0.15) 0%, rgba(52, 195, 99, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(52, 195, 99, 0.1) 0%, rgba(52, 195, 99, 0.035) 100%);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(52, 195, 99, 0.4);
+    border: 2px solid rgba(52, 195, 99, 0.25);
     border-radius: 15px;
     padding: 3rem;
     text-align: center;
@@ -1945,7 +1964,7 @@ body:has(.resources-nav) .navbar {
 .cta-title {
     font-family: Inter;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
     color: var(--primary-white);
     margin-bottom: 1rem;
@@ -1954,7 +1973,7 @@ body:has(.resources-nav) .navbar {
 .cta-description {
     font-family: Inter;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 2rem;
@@ -1983,11 +2002,11 @@ body:has(.resources-nav) .navbar {
     }
 
     .cta-title {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .cta-description {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .cta-actions {
@@ -2000,7 +2019,7 @@ body:has(.resources-nav) .navbar {
     }
 
     .subsection-title {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .nutrition-card {
@@ -2008,13 +2027,13 @@ body:has(.resources-nav) .navbar {
     }
 
     .nutrition-subtitle {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 767.98px) {
     .subsection-title {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .video-preview {
@@ -2023,27 +2042,27 @@ body:has(.resources-nav) .navbar {
     }
 
     .video-title {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .nutrition-subtitle {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .food-list li {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
 /* Responsive styles for FAQ */
 @media (max-width: 991.98px) {
     .accordion-button {
-        font-size: 16px;
+        font-size: 14px;
         padding: 1.25rem;
     }
     
     .accordion-body {
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 
@@ -2053,12 +2072,12 @@ body:has(.resources-nav) .navbar {
     }
     
     .accordion-button {
-        font-size: 15px;
+        font-size: 13px;
         padding: 1rem;
     }
     
     .accordion-body {
-        font-size: 14px;
+        font-size: 12px;
         padding: 0 1rem 1rem;
     }
 }
