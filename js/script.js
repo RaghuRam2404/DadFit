@@ -6,13 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const navbarHeight = navbar.offsetHeight;
     
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > navbarHeight) {
+    // Debounce scroll handler for navbar
+    const handleNavbarScroll = debounce(function() {
+        const scrollThreshold = 20; // Add a buffer to prevent oscillation
+        const navCollapse = document.querySelector('.navbar-collapse');
+        const isMenuOpen = navCollapse && navCollapse.classList.contains('show');
+        
+        if (window.scrollY > scrollThreshold || isMenuOpen) {
             navbar.classList.add('scrolled');
+            navbar.classList.remove('navbar-dark');
         } else {
             navbar.classList.remove('scrolled');
+            navbar.classList.add('navbar-dark');
         }
-    });
+    }, 10); // Small delay for smooth transition
+
+    window.addEventListener('scroll', handleNavbarScroll);
 
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
@@ -172,15 +181,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const navbarCollapse = document.querySelector('.navbar-collapse');
         
         if (navbarToggler && navbarCollapse) {
-            navbarToggler.addEventListener('click', function() {
-                // Focus management for mobile menu
-                setTimeout(() => {
-                    if (navbarCollapse.classList.contains('show')) {
-                        const firstNavLink = navbarCollapse.querySelector('.nav-link');
-                        if (firstNavLink) firstNavLink.focus();
-                    }
-                }, 300);
+            // Listen for Bootstrap's collapse events instead of click
+            navbarCollapse.addEventListener('show.bs.collapse', function() {
+                // When menu is about to open
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('navbar-dark');
             });
+
+            navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+                // When menu is fully closed
+                const scrollThreshold = 20;
+                const isScrolled = window.scrollY > scrollThreshold;
+                
+                if (!isScrolled) {
+                    navbar.classList.remove('scrolled');
+                    navbar.classList.add('navbar-dark');
+                }
+            });
+
+            // Focus management
+            /*navbarCollapse.addEventListener('shown.bs.collapse', function() {
+                const firstNavLink = navbarCollapse.querySelector('.nav-link');
+                if (firstNavLink) firstNavLink.focus();
+            });*/
         }
     }
 
