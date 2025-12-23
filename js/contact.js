@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Zoho CRM Mandatory Field Check Function
     function checkMandatory() {
-        const mndFileds = ['Last Name', 'Email', 'Mobile', 'LEADCF51', 'LEADCF52', 'Company'];
-        const fldLangVal = ['Last Name', 'Email', 'Phone Number', 'Number of Kids', 'Age', 'Company/Profession'];
+        const mndFileds = ['Last Name', 'Email', 'Mobile', 'LEADCF51', 'LEADCF52', 'Company', 'LEADCF4'];
+        const fldLangVal = ['Last Name', 'Email', 'Phone Number', 'Number of Kids', 'Age', 'Company/Profession', 'How Did You Hear About Us'];
         
         for (let i = 0; i < mndFileds.length; i++) {
             const fieldObj = document.forms['WebToLeads1166383000000602627'][mndFileds[i]];

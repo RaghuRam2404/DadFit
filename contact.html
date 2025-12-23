@@ -87,9 +87,9 @@
                     <div class="form-container">
                         <form id="contactForm" class="contact-form" action="https://crm.zoho.in/crm/WebToLeadForm" name="WebToLeads1166383000000602627" method="POST" accept-charset="UTF-8" novalidate>
                             <!-- Zoho CRM Hidden Fields - Do not remove -->
-                            <input type="text" style="display:none;" name="xnQsjsdp" value="39a66610f6f5b2e9650e94ee906fb61d80588a2903edcabe25b735347a5fef16">
+                            <input type="text" style="display:none;" name="xnQsjsdp" value="47e327ca27bd4b2696f7cc5461feddc122f8658e69fda44d4acae7d079df70dc">
                             <input type="hidden" name="zc_gad" id="zc_gad" value="">
-                            <input type="text" style="display:none;" name="xmIwtLD" value="1c7af81a20247c6396181878d5f1645945b7dab98fd145d260863c76f9c3ad99e10572aa067dc3018cee81054ef406fe">
+                            <input type="text" style="display:none;" name="xmIwtLD" value="a0283f886a15199e4fc0f64570d74e5a003798d66b2e308fc21dbd8d0bd9fd5b690af8b35dddbf2248ca1f6ad2a752ed">
                             <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
                             <input type="text" style="display:none;" name="returnURL" value="https&#x3a;&#x2f;&#x2f;dadfit.in&#x2f;contact_success">
                             <input type="text" style="display:none;" name="aG9uZXlwb3Q" value="">
@@ -160,6 +160,21 @@
                                 </div>
 
                                 <div class="mb-4">
+                                    <label for="howHearUs" class="form-label">How Did You Hear About Us? <span class="required">*</span></label>
+                                    <select class="form-select" id="howHearUs" name="LEADCF4" required>
+                                        <option value="-None-" selected>Choose an option</option>
+                                        <option value="Friend Referral">Friend Referral</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="YouTube">YouTube</option>
+                                        <option value="Google Search">Google Search</option>
+                                        <option value="AI Suggested">AI Suggested</option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select how you heard about us.</div>
+                                </div>
+
+                                <div class="mb-4">
                                     <label for="motivationLevel" class="form-label">Next 30 Days Start Confidence (1-10)</label>
                                     <div class="scale-container">
                                         <div class="scale-labels">
@@ -200,22 +215,10 @@
                                         <span id="charCount">0</span> / 1000 characters
                                     </div>
                                 </div>
-
-                                <div class="mb-4">
-                                    <label for="preferredContact" class="form-label">Lead Source</label>
-                                    <select class="form-select" id="preferredContact" name="Lead Source">
-                                        <option value="-None-" selected>How did you hear about us?</option>
-                                        <option value="Friend Referral">Friend Referral</option>
-                                        <option value="Instagram">Instagram</option>
-                                        <option value="YouTube">YouTube</option>
-                                        <option value="Google Store">Google Store</option>
-                                        <option value="AI suggested">AI suggested</option>
-                                        <option value="X (Twitter)">X (Twitter)</option>
-                                        <option value="Facebook">Facebook</option>
-                                        <option value="Others">Others</option>
-                                    </select>
-                                </div>
                             </div>
+
+                            <!-- Hidden Lead Source Field -->
+                            <input type="text" style="display:none;" name="Lead Source" value="WebForm-DFSite">
 
                             <!-- Submit Button -->
                             <div class="form-actions">
@@ -247,7 +250,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Zoho CRM Analytics Tracking -->
-    <script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=5dc8238b428178129d1e5ca482f722b61ff3552f8752a630733f4bfddbd61a3db90d045ba4212578d98f253aba33f7d8gid4ba593a04916f87c3ba3107a4d68cd31087093f5ecde1e62ac5c8c36ab1ef7f0gid10c730b239e44930b91bffeae168af4f32ce02d0f32e87142365cecbe479d123gid20b5eda5e187dc5e66ded879403e1b1c42382242d95ed7368857b1079f55a12f&tw=a1ceff76b087f8aca7d6860fce932aa207ebc8168f043111e46947df94277363"></script>
+    <script id="wf_anal" src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=b47b7136c23eee81b79fb3321f292fba56558a26fc9a485e8e27cd2a2713fe499cf7e1531ae927401628800dd1016186gid15aeff66373f47527cefa21525a1a5bd785579e5a5cca54dc81880c38fe2fe49gid6615305c100b02c2797baa279532a334df0c08d7c5d276aa6f00d701cb9fc5d4gid0de1c094b4fd1c68db7a92a50c505eed40d16753ffafc7bdcb9efe2f70e62468&tw=bc4319c92e06f01de41d875e51dbccaba4d56a016c249568a087b7b7ab893550"></script>
     
     <!-- Custom JS -->
     <script src="js/script.js"></script>
