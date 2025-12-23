@@ -3,16 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // Range slider value updates
-    const fitnessLevelSlider = document.getElementById('currentFitnessLevel');
-    const fitnessLevelValue = document.getElementById('fitnessLevelValue');
     const motivationSlider = document.getElementById('motivationLevel');
     const motivationValue = document.getElementById('motivationLevelValue');
-    
-    if (fitnessLevelSlider && fitnessLevelValue) {
-        fitnessLevelSlider.addEventListener('input', function() {
-            fitnessLevelValue.textContent = this.value;
-        });
-    }
     
     if (motivationSlider && motivationValue) {
         motivationSlider.addEventListener('input', function() {
@@ -48,26 +40,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Checkbox "None" behavior
-    const healthNone = document.getElementById('healthNone');
-    const healthCheckboxes = document.querySelectorAll('input[name="healthConditions"]:not(#healthNone)');
-    
-    if (healthNone) {
-        healthNone.addEventListener('change', function() {
-            if (this.checked) {
-                healthCheckboxes.forEach(cb => {
-                    cb.checked = false;
-                });
-            }
-        });
-        
-        healthCheckboxes.forEach(cb => {
-            cb.addEventListener('change', function() {
-                if (this.checked && healthNone.checked) {
-                    healthNone.checked = false;
+    // Zoho CRM Email Validation Function
+    function validateEmail() {
+        const emailFld = document.querySelectorAll('[ftype=email]');
+        for (let i = 0; i < emailFld.length; i++) {
+            const emailVal = emailFld[i].value;
+            if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                const atpos = emailVal.indexOf('@');
+                const dotpos = emailVal.lastIndexOf('.');
+                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                    alert('Please enter a valid email address.');
+                    emailFld[i].focus();
+                    return false;
                 }
-            });
-        });
+            }
+        }
+        return true;
+    }
+    
+    // Zoho CRM Mandatory Field Check Function
+    function checkMandatory() {
+        const mndFileds = ['Last Name', 'Email', 'Mobile', 'LEADCF51', 'LEADCF52', 'Company'];
+        const fldLangVal = ['Last Name', 'Email', 'Phone Number', 'Number of Kids', 'Age', 'Company/Profession'];
+        
+        for (let i = 0; i < mndFileds.length; i++) {
+            const fieldObj = document.forms['WebToLeads1166383000000602627'][mndFileds[i]];
+            if (fieldObj) {
+                if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+                    if (fieldObj.type == 'file') {
+                        alert('Please select a file to upload.');
+                        fieldObj.focus();
+                        return false;
+                    }
+                    alert(fldLangVal[i] + ' cannot be empty.');
+                    fieldObj.focus();
+                    return false;
+                } else if (fieldObj.nodeName == 'SELECT') {
+                    if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+                        alert(fldLangVal[i] + ' cannot be none.');
+                        fieldObj.focus();
+                        return false;
+                    }
+                } else if (fieldObj.type == 'checkbox') {
+                    if (fieldObj.checked == false) {
+                        alert('Please accept ' + fldLangVal[i]);
+                        fieldObj.focus();
+                        return false;
+                    }
+                }
+            }
+        }
+        
+        if (!validateEmail()) {
+            return false;
+        }
+        
+        // Handle smarturl service parameter if present
+        const urlparams = new URLSearchParams(window.location.search);
+        if (urlparams.has('service') && (urlparams.get('service') === 'smarturl')) {
+            const webform = document.getElementById('contactForm');
+            const service = urlparams.get('service');
+            const smarturlfield = document.createElement('input');
+            smarturlfield.setAttribute('type', 'hidden');
+            smarturlfield.setAttribute('value', service);
+            smarturlfield.setAttribute('name', 'service');
+            webform.appendChild(smarturlfield);
+        }
+        
+        return true;
     }
     
     // Form validation and submission
@@ -133,31 +173,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // Run Zoho CRM validation
+            if (!checkMandatory()) {
+                return;
+            }
+            
             // Show loading state
             btnSubmit.disabled = true;
             btnText.classList.add('d-none');
             btnLoader.classList.remove('d-none');
             
-            // Collect form data
-            const formData = new FormData(contactForm);
-            const data = {};
+            // Set character encoding
+            document.charset = 'UTF-8';
             
-            // Process regular form fields
-            for (let [key, value] of formData.entries()) {
-                if (key === 'healthConditions') {
-                    if (!data[key]) {
-                        data[key] = [];
-                    }
-                    data[key].push(value);
-                } else {
-                    data[key] = value;
-                }
-            }
+            // Submit form to Zoho CRM
+            contactForm.submit();
             
-            // Log form data (replace with actual Zoho CRM integration)
-            console.log('Form Data:', data);
-            
-            // Simulate API call
+            // Show success message after a short delay
             setTimeout(function() {
                 // Hide form and show success message
                 contactForm.classList.add('d-none');
@@ -165,25 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Reset slider values
-                if (fitnessLevelValue) fitnessLevelValue.textContent = '5';
-                if (motivationValue) motivationValue.textContent = '5';
-                if (charCount) charCount.textContent = '0';
-                
-                // Reset button state
-                btnSubmit.disabled = false;
-                btnText.classList.remove('d-none');
-                btnLoader.classList.add('d-none');
-                
-                // Remove validation classes
-                inputs.forEach(input => {
-                    input.classList.remove('is-invalid', 'is-valid');
-                });
-            }, 2000);
+            }, 1000);
         });
     }
     
