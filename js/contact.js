@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Zoho CRM Mandatory Field Check Function
     function checkMandatory() {
-        const mndFileds = ['Last Name', 'Email', 'Mobile', 'LEADCF51', 'LEADCF52', 'Company', 'LEADCF4'];
-        const fldLangVal = ['Last Name', 'Email', 'Phone Number', 'Number of Kids', 'Age', 'Company/Profession', 'How Did You Hear About Us'];
+        const mndFileds = ['Last Name', 'Email', 'Mobile', 'LEADCF51', 'LEADCF52', 'Company'];
+        const fldLangVal = ['Last Name', 'Email', 'Phone Number', 'Number of Kids', 'Age', 'Company/Profession'];
         
         for (let i = 0; i < mndFileds.length; i++) {
             const fieldObj = document.forms['WebToLeads1166383000000602627'][mndFileds[i]];
@@ -135,8 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!input.value.trim()) {
                     input.classList.add('is-invalid');
                     isValid = false;
-                } else {
-                    input.classList.add('is-valid');
                 }
             });
             
@@ -159,6 +157,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     phoneInput.classList.add('is-invalid');
                     phoneInput.classList.remove('is-valid');
                     isValid = false;
+                }
+            }
+            
+            // Validate How Did You Hear About Us
+            const howHearUsSelect = document.getElementById('howHearUs');
+            if (howHearUsSelect && howHearUsSelect.hasAttribute('required')) {
+                if (!howHearUsSelect.value || howHearUsSelect.value === '-None-') {
+                    howHearUsSelect.classList.add('is-invalid');
+                    howHearUsSelect.classList.remove('is-valid');
+                    isValid = false;
+                } else {
+                    howHearUsSelect.classList.add('is-valid');
+                    howHearUsSelect.classList.remove('is-invalid');
                 }
             }
             
