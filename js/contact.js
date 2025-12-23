@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form validation and submission
     const contactForm = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
     const btnSubmit = document.querySelector('.btn-submit');
     const btnText = document.querySelector('.btn-text');
     const btnLoader = document.querySelector('.btn-loader');
@@ -186,18 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set character encoding
             document.charset = 'UTF-8';
             
-            // Submit form to Zoho CRM
+            // Submit form to Zoho CRM (will redirect to contact_success.html)
             contactForm.submit();
-            
-            // Show success message after a short delay
-            setTimeout(function() {
-                // Hide form and show success message
-                contactForm.classList.add('d-none');
-                successMessage.classList.remove('d-none');
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 1000);
         });
     }
     
