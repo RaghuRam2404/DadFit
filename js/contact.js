@@ -278,10 +278,9 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = value && value !== '-None-';
         }
         
-        // Apply validation classes
+        // Apply validation classes - only show invalid state, no green valid state
         if (isValid) {
-            field.classList.remove('is-invalid');
-            field.classList.add('is-valid');
+            field.classList.remove('is-invalid', 'is-valid');
         } else {
             field.classList.add('is-invalid');
             field.classList.remove('is-valid');
