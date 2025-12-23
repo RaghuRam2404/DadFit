@@ -201,26 +201,90 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Real-time validation on blur
+    // Real-time validation on blur/focusout
     const formInputs = document.querySelectorAll('#contactForm input, #contactForm select, #contactForm textarea');
     formInputs.forEach(input => {
         input.addEventListener('blur', function() {
-            if (this.hasAttribute('required')) {
-                if (!this.value.trim()) {
-                    this.classList.add('is-invalid');
-                    this.classList.remove('is-valid');
-                } else {
-                    this.classList.remove('is-invalid');
-                    this.classList.add('is-valid');
-                }
-            }
+            validateField(this);
         });
         
-        // Remove invalid class on input
+        // Re-validate on input for email, phone, age, and kids fields
         input.addEventListener('input', function() {
             if (this.classList.contains('is-invalid')) {
                 this.classList.remove('is-invalid');
             }
+            // Re-validate specific fields on input if they were previously validated
+            if ((this.getAttribute('ftype') === 'email' || this.id === 'phone' || this.id === 'age' || this.id === 'kids') && 
+                (this.classList.contains('is-valid') || this.classList.contains('is-invalid'))) {
+                validateField(this);
+            }
         });
     });
+    
+    // Field validation function
+    function validateField(field) {
+        const value = field.value.trim();
+        
+        // Skip validation if field is empty and not required
+        if (!value && !field.hasAttribute('required')) {
+            field.classList.remove('is-invalid', 'is-valid');
+            return;
+        }
+        
+        let isValid = true;
+        
+        // Check if required field is empty
+        if (field.hasAttribute('required') && !value) {
+            isValid = false;
+        }
+        // Validate age (20-60)
+        else if (field.id === 'age') {
+            const age = parseInt(value);
+            isValid = !isNaN(age) && age >= 20 && age <= 60;
+        }
+        // Validate kids (1-10)
+        else if (field.id === 'kids') {
+            const kids = parseInt(value);
+            isValid = !isNaN(kids) && kids >= 1 && kids <= 10;
+        }
+        // Validate email
+        else if (field.getAttribute('ftype') === 'email') {
+            if (value) {
+                const emailRegex = /^[^\s@]+(\+[^\s@]+)?@[^\s@]+\.[^\s@]+$/;
+                isValid = emailRegex.test(value);
+            } else if (field.hasAttribute('required')) {
+                isValid = false;
+            } else {
+                // Not required and empty - don't show any validation
+                field.classList.remove('is-invalid', 'is-valid');
+                return;
+            }
+        }
+        // Validate phone (10 digits)
+        else if (field.id === 'phone') {
+            if (value) {
+                const phoneRegex = /^[0-9]{10}$/;
+                isValid = phoneRegex.test(value);
+            } else if (field.hasAttribute('required')) {
+                isValid = false;
+            } else {
+                // Not required and empty - don't show any validation
+                field.classList.remove('is-invalid', 'is-valid');
+                return;
+            }
+        }
+        // Validate select fields
+        else if (field.nodeName === 'SELECT' && field.hasAttribute('required')) {
+            isValid = value && value !== '-None-';
+        }
+        
+        // Apply validation classes
+        if (isValid) {
+            field.classList.remove('is-invalid');
+            field.classList.add('is-valid');
+        } else {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+        }
+    }
 });
