@@ -1,4 +1,8 @@
 /* Post Page Specific Styles */
+body {
+    overflow-x: hidden;
+}
+
 .post-hero {
     background: linear-gradient(135deg, var(--primary-dark) 0%, #2a2a2a 100%);
     padding: 160px 0 80px;
@@ -177,9 +181,17 @@
     color: var(--primary-green);
 }
 
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 2rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+
 .comparison-table {
     width: 100%;
-    margin: 2rem 0;
+    min-width: 600px;
+    margin: 0;
     border-collapse: collapse;
     background: linear-gradient(145deg, #252525 0%, #1a1a1a 100%);
     border-radius: 12px;
@@ -303,9 +315,34 @@
         padding: 2rem 1.5rem;
     }
     
+    .comparison-table {
+        min-width: 100%;
+        font-size: 0.8125rem;
+    }
+    
     .comparison-table th,
     .comparison-table td {
-        padding: 1rem;
-        font-size: 0.875rem;
+        padding: 0.875rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+    
+    .workout-meta {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .comparison-table {
+        font-size: 0.75rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
     }
 }
