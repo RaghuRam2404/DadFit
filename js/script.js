@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - navbarHeight;
                 
+                // Update URL hash
+                history.pushState(null, null, targetId);
+                
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -266,6 +269,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const navbarHeight = navbar ? navbar.offsetHeight : 80;
                 const resourcesNavHeight = resourcesNav ? resourcesNav.offsetHeight : 60;
                 const offsetTop = targetSection.offsetTop - navbarHeight - resourcesNavHeight - 20;
+                
+                // Update URL hash
+                history.pushState(null, null, targetId);
                 
                 window.scrollTo({
                     top: offsetTop,
