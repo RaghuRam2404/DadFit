@@ -331,6 +331,84 @@ body {
     }
 }
 
+/* Food Tables */
+.food-table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.food-table thead {
+    background: rgba(52, 195, 99, 0.1);
+}
+
+.food-table thead.red-header {
+    background: rgba(195, 52, 52, 0.1);
+}
+
+.food-table thead.orange-header {
+    background: rgba(255, 165, 52, 0.1);
+}
+
+.food-table thead.blue-header {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.food-table th {
+    color: #FFFFFF;
+    padding: 1rem;
+    border: none;
+    font-weight: 600;
+    text-align: left;
+}
+
+.food-table td {
+    padding: 1rem;
+    border: none;
+    line-height: 1.6;
+}
+
+.food-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.food-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.food-table .cell-number {
+    color: var(--primary-gray);
+}
+
+.food-table .cell-food-name {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.food-table .cell-calories {
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.food-table .cell-calories.red {
+    color: #ff6b6b;
+}
+
+.food-table .cell-calories.orange {
+    color: #ffa94d;
+}
+
+.food-table .cell-calories.blue {
+    color: #3498db;
+}
+
+.food-table .cell-description {
+    color: var(--primary-gray);
+}
+
 @media (max-width: 480px) {
     .post-hero h1 {
         font-size: 1.75rem;
@@ -344,5 +422,11 @@ body {
     .comparison-table td {
         padding: 0.75rem 0.5rem;
         font-size: 0.75rem;
+    }
+    
+    .food-table th,
+    .food-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.875rem;
     }
 }
