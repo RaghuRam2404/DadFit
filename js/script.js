@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Highlight active section on scroll
     if (resourcesNavLinks.length > 0) {
-        const sections = document.querySelectorAll('.resources-section[id]');
+        const sections = document.querySelectorAll('section[id]');
         const resourcesNav = document.getElementById('resourcesNav');
         
         window.addEventListener('scroll', function() {
