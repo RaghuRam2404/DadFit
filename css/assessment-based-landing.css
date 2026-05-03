@@ -222,10 +222,10 @@ body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--white);ov
 @media(max-width:768px){.lp-pillars{grid-template-columns:1fr}}
 .lp-pillar{
     background:var(--card-bg);border:1px solid var(--border);border-radius:18px;
-    padding:2rem 1.75rem;transition:border-color .25s,transform .25s;
+    padding:2rem 1.75rem;transition:border-color .25s,transform .25s;text-align:center;
 }
 .lp-pillar:hover{border-color:var(--green-border);transform:translateY(-4px)}
-.lp-pillar-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.lp-pillar-icon{width:96px;height:96px;margin:0 auto 1.5rem;display:block;object-fit:contain;filter:drop-shadow(0 0 8px rgba(52,195,99,0.4));}
 .lp-pillar-title{font-family:Inter;font-size:22px;font-weight:700;color:var(--white);margin-bottom:.75rem}
 .lp-pillar-body{font-family:Inter;font-size:16px;font-weight:400;color:rgba(255,255,255,.85);line-height:1.8;margin:0}
 
