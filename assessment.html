@@ -956,33 +956,42 @@
     }
 
     // ── SHOW RESULTS ──────────────────────────────────────────
+    function contactUrl(intent) {
+        var p = new URLSearchParams();
+        if (leadName)  p.set('name',  leadName);
+        if (leadEmail) p.set('email', leadEmail);
+        if (leadPhone) p.set('phone', leadPhone);
+        if (intent)    p.set('intent', intent);
+        return 'contact.html?' + p.toString();
+    }
+
     function showResults(a, score) {
         var support   = a.q14 || '';
         var isFree    = support.indexOf('Free content')  !== -1;
         var isOneTime = support.indexOf('One-time')      !== -1;
         var is1on1    = support.indexOf('1:1')           !== -1;
 
-        var ctaUrl = 'contact.html', ctaLabel = 'Apply for 1:1 Coaching →';
+        var ctaUrl = contactUrl('1on1'), ctaLabel = 'Apply for 1:1 Coaching →';
 
         if (score <= 4) {
             if (is1on1) {
-                ctaUrl = 'contact.html'; ctaLabel = 'Apply for 1:1 Coaching →';
+                ctaUrl = contactUrl('1on1'); ctaLabel = 'Apply for 1:1 Coaching →';
             } else {
-                ctaUrl = 'https://www.youtube.com/@dadfit'; ctaLabel = 'Watch Free Tutorials →';
+                ctaUrl = 'https://www.youtube.com/playlist?list=PLPp5lrulpyPcG5hE_8WXX1irRDNqNLF-U'; ctaLabel = 'Watch Free Tutorials →';
             }
         } else if (score <= 7) {
             if (is1on1) {
-                ctaUrl = 'contact.html'; ctaLabel = 'Apply for 1:1 Coaching →';
+                ctaUrl = contactUrl('1on1'); ctaLabel = 'Apply for 1:1 Coaching →';
             } else if (isOneTime) {
-                ctaUrl = 'contact.html'; ctaLabel = 'Book a One-Time Consultation →';
+                ctaUrl = contactUrl('consultation'); ctaLabel = 'Book a One-Time Consultation →';
             } else {
-                ctaUrl = 'https://www.youtube.com/@dadfit'; ctaLabel = 'Watch Free Tutorials →';
+                ctaUrl = 'https://www.youtube.com/playlist?list=PLPp5lrulpyPcG5hE_8WXX1irRDNqNLF-U'; ctaLabel = 'Watch Free Tutorials →';
             }
         } else {
             if (isFree) {
-                ctaUrl = 'contact.html'; ctaLabel = 'Book a One-Time Consultation →';
+                ctaUrl = contactUrl('consultation'); ctaLabel = 'Book a One-Time Consultation →';
             } else {
-                ctaUrl = 'contact.html'; ctaLabel = 'Apply for 1:1 Coaching →';
+                ctaUrl = contactUrl('1on1'); ctaLabel = 'Apply for 1:1 Coaching →';
             }
         }
 

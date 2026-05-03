@@ -246,5 +246,25 @@
     <!-- Custom JS -->
     <script src="js/script.js"></script>
     <script src="js/contact.js"></script>
+    <!-- Prefill from assessment URL params -->
+    <script>
+    (function () {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get('name'))  { var n = document.getElementById('name');  if (n) n.value = p.get('name'); }
+        if (p.get('email')) { var e = document.getElementById('email'); if (e) e.value = p.get('email'); }
+        if (p.get('phone')) { var ph = document.getElementById('phone'); if (ph) ph.value = p.get('phone'); }
+        var intent = p.get('intent');
+        if (intent) {
+            var msg = document.getElementById('message');
+            if (msg) {
+                if (intent === '1on1') {
+                    msg.value = "I've tried getting fit on my own but struggle to stay consistent. I'm looking for structured 1:1 coaching with real accountability — someone who understands the chaos of dad life and can build a plan that actually fits around it.";
+                } else if (intent === 'consultation') {
+                    msg.value = "I have some habits in place but I'm missing a clear, structured plan. I'd like a one-time expert session to walk away with a focused roadmap I can follow on my own.";
+                }
+            }
+        }
+    }());
+    </script>
 </body>
 </html>
