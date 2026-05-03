@@ -250,17 +250,65 @@
     <script>
     (function () {
         var p = new URLSearchParams(window.location.search);
+
+        // Name, email, phone
         if (p.get('name'))  { var n = document.getElementById('name');  if (n) n.value = p.get('name'); }
         if (p.get('email')) { var e = document.getElementById('email'); if (e) e.value = p.get('email'); }
         if (p.get('phone')) { var ph = document.getElementById('phone'); if (ph) ph.value = p.get('phone'); }
-        var intent = p.get('intent');
+
+        // Fitness goal (Q12 → fitnessGoal select)
+        var goalMap = {
+            'Lose belly fat and look better':              'Lose fat and feel confident',
+            'Build consistent energy throughout the day':  'Improve overall health and energy',
+            'Get stronger and feel more capable':          'Build strength and muscle',
+            'Fix my sleep and recovery':                   'Improve overall health and energy',
+            'Build a lasting fitness habit':               'Maintain fitness during busy seasons'
+        };
+        var goal = p.get('goal');
+        if (goal) {
+            var fg = document.getElementById('fitnessGoal');
+            if (fg) {
+                var mapped = goalMap[goal];
+                if (mapped) {
+                    for (var i = 0; i < fg.options.length; i++) {
+                        if (fg.options[i].value === mapped) { fg.selectedIndex = i; break; }
+                    }
+                }
+            }
+        }
+
+        // Score → readiness slider
+        var score = p.get('score');
+        if (score !== null && score !== '') {
+            var sl = document.getElementById('motivationLevel');
+            var sv = document.getElementById('motivationLevelValue');
+            if (sl) sl.value = score;
+            if (sv) sv.textContent = score;
+        }
+
+        // Q1 (exercise frequency) → exerciseFrequency select
+        var q1 = p.get('q1');
+        if (q1) {
+            var ef = document.getElementById('exerciseFrequency');
+            if (ef) {
+                var efVal = q1 === 'Yes' ? '2-4 days' : 'not sure yet';
+                for (var j = 0; j < ef.options.length; j++) {
+                    if (ef.options[j].value === efVal) { ef.selectedIndex = j; break; }
+                }
+            }
+        }
+
+        // Intent + obstacle → message textarea
+        var intent   = p.get('intent');
+        var obstacle = p.get('obstacle');
+        var obstacleText = obstacle ? ' My biggest challenge so far: ' + obstacle + '.' : '';
         if (intent) {
             var msg = document.getElementById('message');
             if (msg) {
                 if (intent === '1on1') {
-                    msg.value = "I've tried getting fit on my own but struggle to stay consistent. I'm looking for structured 1:1 coaching with real accountability — someone who understands the chaos of dad life and can build a plan that actually fits around it.";
+                    msg.value = "I've tried getting fit on my own but struggle to stay consistent." + obstacleText + " I'm looking for structured 1:1 coaching with real accountability — someone who understands the chaos of dad life and can build a plan that actually fits around it.";
                 } else if (intent === 'consultation') {
-                    msg.value = "I have some habits in place but I'm missing a clear, structured plan. I'd like a one-time expert session to walk away with a focused roadmap I can follow on my own.";
+                    msg.value = "I have some habits in place but I'm missing a clear, structured plan." + obstacleText + " I'd like a one-time expert session to walk away with a focused roadmap I can follow on my own.";
                 }
             }
         }
